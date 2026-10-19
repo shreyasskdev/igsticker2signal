@@ -143,7 +143,7 @@ fn root_copy(p: &Paths, s: &Shared) -> Result<(), String> {
         .status()
         .map_err(|e| format!("cannot run su: {e}"))?;
     if !status.success() {
-        return Err(format!("root denied or failed (su exit {:?}). Approve the popup, or use: stk --no-root", status.code()));
+        return Err(format!("root denied or failed (su exit {:?}). Approve the popup, or use: igsticker2signal --no-root", status.code()));
     }
     let n = files_in(&p.stage).len();
     s.say(format!("root copy: {n} files from Instagram cache"));
